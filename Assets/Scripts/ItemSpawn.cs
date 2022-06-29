@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class ItemSpawn : MonoBehaviour
 {
-    public GameObject[] items;
-    void Update()
+    public Sprite[] items;
+    private void Start()
     {
-        
+        int r = Random.Range(0, 2);
+        if (r == 0)
+        {
+            transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().sprite = items[0];
+        }
     }
 }
