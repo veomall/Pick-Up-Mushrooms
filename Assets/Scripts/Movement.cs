@@ -5,15 +5,13 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-    private Rigidbody2D player;
     public Joystick joystick;
     public Animator animator;
-    private Vector2 moveVelocity;
     private Vector3 MousePos;
     private Vector3 GlobalPos;
     private void Start()
     {
-        player = GetComponent<Rigidbody2D>();
+        GlobalPos = transform.position;
     }
     private void Update()
     {
@@ -23,11 +21,9 @@ public class Movement : MonoBehaviour
             GlobalPos = Camera.main.ScreenToWorldPoint(MousePos);
             print(GlobalPos);
         }
-        player.MovePosition(GlobalPos);
-        Vector2 moveInput = new Vector2(joystick.Horizontal, joystick.Vertical);
-        moveVelocity = moveInput.normalized * speed;
-        float H = joystick.Horizontal;
-        float V = joystick.Vertical;
+        gameObject.transform.position = Vector2.MoveTowards(transform.position, GlobalPos, speed * Time.deltaTime);
+        float H = GlobalPos.x - transform.position.x;
+        float V = GlobalPos.y - transform.position.y;
         if (H > 0 && V > 0)
         {
             if (H > V)
@@ -108,9 +104,5 @@ public class Movement : MonoBehaviour
             animator.SetBool("up", false);
             animator.SetBool("down", false);
         }
-    }
-    private void FixedUpdate()
-    {
-        player.MovePosition(player.position + moveVelocity * Time.fixedDeltaTime);
     }
 }
