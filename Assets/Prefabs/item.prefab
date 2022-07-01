@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4892801459562255828}
-  - component: {fileID: 4369122461891984752}
   - component: {fileID: 4045513244923583732}
+  - component: {fileID: 2136674117111339411}
+  - component: {fileID: -4329102235133003179}
   m_Layer: 0
   m_Name: item
   m_TagString: Item
@@ -27,62 +28,13 @@ Transform:
   m_GameObject: {fileID: 4892801459562255831}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6534641298020585025}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &4369122461891984752
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4892801459562255831}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.5800817, y: 0.35765505}
-      - {x: 0.8843732, y: 0.7160753}
-      - {x: 1.5263692, y: 0.996173}
-      - {x: 1.9173781, y: 1.4820973}
-      - {x: 1.9340627, y: 1.9166256}
-      - {x: 1.6694748, y: 2.2254064}
-      - {x: 0.9647075, y: 2.4197507}
-      - {x: 0.051758528, y: 2.4244766}
-      - {x: -1.0818284, y: 2.089486}
-      - {x: -1.5107734, y: 1.5949566}
-      - {x: -1.8633809, y: 1.0133238}
-      - {x: -1.917681, y: 0.33315718}
-      - {x: -1.5721421, y: -0.124347135}
-      - {x: -0.50269794, y: -0.0027395785}
-      - {x: -0.02495709, y: 0.13337898}
-      - {x: 0.018424079, y: -0.2684241}
-      - {x: -0.4717702, y: -1.2073659}
-      - {x: -0.19046798, y: -1.7439038}
-      - {x: -0.13750821, y: -2.5154972}
-      - {x: 1.6336331, y: -2.498826}
-      - {x: 1.3772359, y: -1.9864932}
-      - {x: 0.9767304, y: -1.7565047}
-      - {x: 0.5644623, y: -1.1664895}
-      - {x: 0.9053294, y: -0.2579369}
 --- !u!114 &4045513244923583732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +49,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 21300000, guid: cfd9755e2f824ed4494b64148e26cbbe, type: 3}
+--- !u!70 &2136674117111339411
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892801459562255831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.049217194, y: -0.033151507}
+  m_Size: {x: 3.9779615, y: 5.8553467}
+  m_Direction: 0
+--- !u!114 &-4329102235133003179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892801459562255831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff74b7a7bf9d91044b9412a585d5ec68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  slotButton: {fileID: 2927934638192963504, guid: aada8026c3cd3b0488a08aa52365bc4b, type: 3}
 --- !u!1 &8662762476766708998
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,16 +152,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: cfd9755e2f824ed4494b64148e26cbbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &385248081601107849

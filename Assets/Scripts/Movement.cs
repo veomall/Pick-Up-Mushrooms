@@ -5,7 +5,6 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed;
-    public Joystick joystick;
     public Animator animator;
     private Vector3 MousePos;
     private Vector3 GlobalPos;
@@ -19,7 +18,6 @@ public class Movement : MonoBehaviour
         {
             MousePos = Input.mousePosition;
             GlobalPos = Camera.main.ScreenToWorldPoint(MousePos);
-            print(GlobalPos);
         }
         gameObject.transform.position = Vector2.MoveTowards(transform.position, GlobalPos, speed * Time.deltaTime);
         float H = GlobalPos.x - transform.position.x;
