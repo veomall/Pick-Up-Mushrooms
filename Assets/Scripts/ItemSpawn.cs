@@ -6,6 +6,7 @@ public class ItemSpawn : MonoBehaviour
 {
     public GameObject[] items;
     public bool isFull = false;
+    public bool canPut = true;
     private float updateTime;
     private float localTime;
     private void Start()
@@ -36,7 +37,7 @@ public class ItemSpawn : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && collision.GetComponent<Reaction>().canPick)
         {
             isFull = false;
         }

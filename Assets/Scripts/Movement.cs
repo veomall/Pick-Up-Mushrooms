@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     public Animator animator;
     private Vector3 MousePos;
     private Vector3 GlobalPos;
+    public GameObject pointer;
     private void Start()
     {
         GlobalPos = transform.position;
@@ -18,6 +19,7 @@ public class Movement : MonoBehaviour
         {
             MousePos = Input.mousePosition;
             GlobalPos = Camera.main.ScreenToWorldPoint(MousePos);
+            pointer.transform.position = new Vector3(GlobalPos.x, GlobalPos.y);
         }
         gameObject.transform.position = Vector2.MoveTowards(transform.position, GlobalPos, speed * Time.deltaTime);
         float H = GlobalPos.x - transform.position.x;

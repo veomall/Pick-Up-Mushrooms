@@ -9,6 +9,7 @@ public class Reaction : MonoBehaviour
     private int score = 0;
     public Sprite closedChest;
     public Sprite openedChest;
+    public bool canPick = true;
     private void Start()
     {
         scoreText.text = System.Convert.ToString(score);

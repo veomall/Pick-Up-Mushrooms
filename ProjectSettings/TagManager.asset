@@ -11,6 +11,7 @@ TagManager:
   - Bottom
   - Left
   - Right
+  - Heap
   layers:
   - Default
   - TransparentFX

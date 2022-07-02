@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6420269759325565805}
   m_Layer: 0
   m_Name: Heap
-  m_TagString: Untagged
+  m_TagString: Heap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,8 +200,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06002903, y: 2.2141993}
-  m_Size: {x: 3.9467485, y: 5.9177756}
+  m_Offset: {x: -0.00066280365, y: -0.08447607}
+  m_Size: {x: 3.963712, y: 5.837355}
   m_Direction: 0
 --- !u!1 &7466123121696597652
 GameObject:
