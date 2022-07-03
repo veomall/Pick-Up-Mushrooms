@@ -9,17 +9,19 @@ public class Movement : MonoBehaviour
     private Vector3 MousePos;
     private Vector3 GlobalPos;
     public GameObject pointer;
+    public bool isBack = false;
     private void Start()
     {
         GlobalPos = transform.position;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isBack)
         {
             MousePos = Input.mousePosition;
             GlobalPos = Camera.main.ScreenToWorldPoint(MousePos);
             pointer.transform.position = new Vector3(GlobalPos.x, GlobalPos.y);
+            isBack = false;
         }
         gameObject.transform.position = Vector2.MoveTowards(transform.position, GlobalPos, speed * Time.deltaTime);
         float H = GlobalPos.x - transform.position.x;
