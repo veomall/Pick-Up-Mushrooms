@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public Animator animator;
     private Vector3 MousePos;
-    private Vector3 GlobalPos;
+    public Vector3 GlobalPos;
     public GameObject pointer;
     public bool isBack = false;
     private void Start()

@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class OpenChest : MonoBehaviour
 {
-    private bool chestIsTarget = false;
+    private Movement movement;
+    private void Start()
+    {
+        movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (chestIsTarget)
-        {
-            print(0);
-        }
+        
+        print(0);
+        movement.GlobalPos = collision.transform.position;
+        
     }
     private void OnMouseDown()
     {
-        print(0);
-        chestIsTarget = true;
+        print(1);
+        movement.GlobalPos = gameObject.transform.position;
     }
 }
